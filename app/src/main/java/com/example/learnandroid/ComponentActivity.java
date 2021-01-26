@@ -3,10 +3,12 @@ package com.example.learnandroid;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Switch;
@@ -20,6 +22,7 @@ public class ComponentActivity extends AppCompatActivity {
     RadioButton rdNam, rdNu;
     RadioGroup rgSex;
     Button btnChooseOS, btnChooseSex;
+    ProgressBar progressTest;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +41,8 @@ public class ComponentActivity extends AppCompatActivity {
         rdNam = findViewById(R.id.rdNam);
         rdNu = findViewById(R.id.rdNu);
         rgSex = findViewById(R.id.rgSex);
+
+        progressTest = findViewById(R.id.progressTest);
 
         btnChooseOS = findViewById(R.id.btnChooseOs);
 
@@ -71,5 +76,21 @@ public class ComponentActivity extends AppCompatActivity {
                 else Toast.makeText(ComponentActivity.this, "Nữ", Toast.LENGTH_SHORT).show();
             }
         });
+
+        CountDownTimer countDownTimer = new CountDownTimer(10000, 1000) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+                progressTest.setProgress(progressTest.getProgress()+10);
+            }
+
+            @Override
+            public void onFinish() {
+                progressTest.setProgress(0);
+            }
+        };
+
+        countDownTimer.start();
+
+
     }
 }

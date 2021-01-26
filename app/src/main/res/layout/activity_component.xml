@@ -56,4 +56,12 @@
         </RadioGroup>
     </LinearLayout>
 
+    <ProgressBar
+        android:id="@+id/progressTest"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:secondaryProgress="25"
+        android:max="100"
+        android:progress="20" />
 </LinearLayout>
