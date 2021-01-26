@@ -9,7 +9,9 @@ import android.widget.Button;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    Button btnLayout;
+    Button btnLayout, btnRandomExercise;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,15 +22,24 @@ public class MainActivity extends AppCompatActivity {
 
     public void addControls(){
         btnLayout = findViewById(R.id.btnLayout);
+        btnRandomExercise = findViewById(R.id.btnRandomExercise);
     }
 
     public void setEvents(){
-    btnLayout.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            Intent intent =  new Intent(MainActivity.this, LayoutActivity.class);
-            startActivity(intent);
-        }
-    });
+        btnLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent =  new Intent(MainActivity.this, LayoutActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btnRandomExercise.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, RandomNumberActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }
