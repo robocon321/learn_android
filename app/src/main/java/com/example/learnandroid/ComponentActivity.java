@@ -3,25 +3,54 @@ package com.example.learnandroid;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 public class ComponentActivity extends AppCompatActivity {
     Switch switchTest;
+    CheckBox ckAndroid, ckUbuntu, ckWindows;
+    Button btnChoose;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_component);
-        switchTest = findViewById(R.id.switchTest);
+        addControls();
+        setEvents();
+    }
 
+    public void addControls(){
+        switchTest = findViewById(R.id.switchTest);
+        ckAndroid = findViewById(R.id.ckAndroid);
+        ckUbuntu = findViewById(R.id.ckUbuntu);
+        ckWindows = findViewById(R.id.ckWindows);
+        btnChoose = findViewById(R.id.btnChooseOs);
+    }
+
+    public void setEvents(){
         switchTest.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if(isChecked)
                     Toast.makeText(ComponentActivity.this, "ON", Toast.LENGTH_SHORT).show();
                 else Toast.makeText(ComponentActivity.this, "OFF", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        btnChoose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ArrayList<String> list = new ArrayList<>();
+                if(ckAndroid.isChecked()) list.add("Android");
+                if(ckUbuntu.isChecked()) list.add("Ubuntu");
+                if(ckWindows.isChecked()) list.add("Windows");
+                Toast.makeText(ComponentActivity.this, list.toString()+"", Toast.LENGTH_SHORT).show();
             }
         });
     }
