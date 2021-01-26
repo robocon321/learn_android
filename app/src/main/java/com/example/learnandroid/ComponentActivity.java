@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Switch;
 import android.widget.Toast;
 
@@ -15,7 +17,9 @@ import java.util.ArrayList;
 public class ComponentActivity extends AppCompatActivity {
     Switch switchTest;
     CheckBox ckAndroid, ckUbuntu, ckWindows;
-    Button btnChoose;
+    RadioButton rdNam, rdNu;
+    RadioGroup rgSex;
+    Button btnChooseOS, btnChooseSex;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +34,13 @@ public class ComponentActivity extends AppCompatActivity {
         ckAndroid = findViewById(R.id.ckAndroid);
         ckUbuntu = findViewById(R.id.ckUbuntu);
         ckWindows = findViewById(R.id.ckWindows);
-        btnChoose = findViewById(R.id.btnChooseOs);
+
+        rdNam = findViewById(R.id.rdNam);
+        rdNu = findViewById(R.id.rdNu);
+        rgSex = findViewById(R.id.rgSex);
+
+        btnChooseOS = findViewById(R.id.btnChooseOs);
+
     }
 
     public void setEvents(){
@@ -43,7 +53,7 @@ public class ComponentActivity extends AppCompatActivity {
             }
         });
 
-        btnChoose.setOnClickListener(new View.OnClickListener() {
+        btnChooseOS.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 ArrayList<String> list = new ArrayList<>();
@@ -51,6 +61,14 @@ public class ComponentActivity extends AppCompatActivity {
                 if(ckUbuntu.isChecked()) list.add("Ubuntu");
                 if(ckWindows.isChecked()) list.add("Windows");
                 Toast.makeText(ComponentActivity.this, list.toString()+"", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        rgSex.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if(checkedId == R.id.rdNam) Toast.makeText(ComponentActivity.this, "Nam", Toast.LENGTH_SHORT).show();
+                else Toast.makeText(ComponentActivity.this, "Nữ", Toast.LENGTH_SHORT).show();
             }
         });
     }
