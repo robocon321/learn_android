@@ -6,9 +6,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.FrameLayout;
 
 public class LayoutActivity extends AppCompatActivity {
-    Button btnLinearLayout, btnRelativeLayout;
+    Button btnLinearLayout, btnRelativeLayout, btnFrameLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +22,7 @@ public class LayoutActivity extends AppCompatActivity {
     public void addControls(){
         btnLinearLayout = findViewById(R.id.btnLinearLayout);
         btnRelativeLayout = findViewById(R.id.btnRelativeLayout);
+        btnFrameLayout = findViewById(R.id.btnFrameLayout);
     }
 
     public void setEvents(){
@@ -35,7 +37,15 @@ public class LayoutActivity extends AppCompatActivity {
         btnRelativeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(LayoutActivity.this, RelativeLayout.class);
+                Intent intent = new Intent(LayoutActivity.this, RelativeLayoutActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btnFrameLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LayoutActivity.this, FrameLayoutActivity.class);
                 startActivity(intent);
             }
         });
