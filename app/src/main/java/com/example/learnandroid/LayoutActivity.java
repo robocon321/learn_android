@@ -10,7 +10,7 @@ import android.widget.Button;
 import android.widget.FrameLayout;
 
 public class LayoutActivity extends AppCompatActivity {
-    Button btnLinearLayout, btnRelativeLayout, btnFrameLayout, btnTableLayout;
+    Button btnLinearLayout, btnRelativeLayout, btnFrameLayout, btnTableLayout, btnConstrainLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +25,7 @@ public class LayoutActivity extends AppCompatActivity {
         btnRelativeLayout = findViewById(R.id.btnRelativeLayout);
         btnFrameLayout = findViewById(R.id.btnFrameLayout);
         btnTableLayout = findViewById(R.id.btnTableLayout);
+        btnConstrainLayout = findViewById(R.id.btnConstraintLayout);
     }
 
     public void setEvents(){
@@ -51,10 +52,19 @@ public class LayoutActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
         btnTableLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(LayoutActivity.this, TableLayoutActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btnConstrainLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LayoutActivity.this, ConstraintLayoutActivity.class);
                 startActivity(intent);
             }
         });
