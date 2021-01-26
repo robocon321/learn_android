@@ -31,5 +31,13 @@ public class LayoutActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        btnRelativeLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LayoutActivity.this, RelativeLayout.class);
+                startActivity(intent);
+            }
+        });
     }
 }
