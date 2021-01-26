@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    Button btnLayout, btnRandomExercise;
+    Button btnLayout, btnRandomExercise, btnChangeImage;
 
 
     @Override
@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     public void addControls(){
         btnLayout = findViewById(R.id.btnLayout);
         btnRandomExercise = findViewById(R.id.btnRandomExercise);
+        btnChangeImage = findViewById(R.id.btnChangeImage_parent);
     }
 
     public void setEvents(){
@@ -38,6 +39,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, RandomNumberActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btnChangeImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ChangeImageActivity.class);
                 startActivity(intent);
             }
         });
