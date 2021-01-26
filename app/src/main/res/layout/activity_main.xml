@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:text="Layout" />
     <Button
-        android:text="Random"
+        android:text="Random number"
         android:id="@+id/btnRandomExercise"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
