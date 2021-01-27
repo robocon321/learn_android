@@ -1,13 +1,13 @@
-package com.example.learnandroid;
+package com.example.learnandroid.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.Layout;
 import android.view.View;
 import android.widget.Button;
-import android.widget.FrameLayout;
+
+import com.example.learnandroid.R;
 
 public class LayoutActivity extends AppCompatActivity {
     Button btnLinearLayout, btnRelativeLayout, btnFrameLayout, btnTableLayout, btnConstrainLayout;

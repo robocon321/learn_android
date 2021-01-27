@@ -1,4 +1,4 @@
-package com.example.learnandroid;
+package com.example.learnandroid.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,6 +10,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
+
+import com.example.learnandroid.R;
 
 import java.util.ArrayList;
 

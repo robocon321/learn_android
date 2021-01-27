@@ -1,4 +1,4 @@
-package com.example.learnandroid;
+package com.example.learnandroid.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,12 +6,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ListView;
-import android.widget.Toast;
+
+import com.example.learnandroid.R;
 
 public class MainActivity extends AppCompatActivity {
     Button btnLayout, btnRandomExercise, btnChangeImage, btnComponent, btnGameCuocDua;
-    Button btnListViewBasic;
+    Button btnListViewBasic, btnListViewAdvance;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
         btnComponent = findViewById(R.id.btnComponent);
         btnGameCuocDua = findViewById(R.id.btnGameCuocDua);
         btnListViewBasic = findViewById(R.id.btnListViewBasic);
+        btnListViewAdvance = findViewById(R.id.btnListViewAdvance);
     }
 
     public void setEvents(){
@@ -75,6 +76,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, ListViewBasicActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btnListViewAdvance.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ListViewAdvanceActivity.class);
                 startActivity(intent);
             }
         });

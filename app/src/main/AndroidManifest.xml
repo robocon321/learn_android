@@ -9,19 +9,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.LearnAndroid">
-        <activity android:name=".ListViewBasicActivity"></activity>
-        <activity android:name=".GameCuocDuaKiThuActivity" />
-        <activity android:name=".ComponentActivity" />
-        <activity android:name=".ChangeImageActivity" />
-        <activity android:name=".RandomNumberActivity" />
-        <activity android:name=".ConstraintLayoutActivity" />
-        <activity android:name=".TableLayoutActivity" />
-        <activity android:name=".FrameLayoutActivity" />
-        <activity android:name=".RelativeLayoutActivity" />
-        <activity android:name=".LinearLayoutActivity" />
-        <activity android:name=".LayoutActivity" />
+        <activity android:name=".activity.ListViewAdvanceActivity"></activity>
+        <activity android:name=".activity.ListViewBasicActivity" />
+        <activity android:name=".activity.GameCuocDuaKiThuActivity" />
+        <activity android:name=".activity.ComponentActivity" />
+        <activity android:name=".activity.ChangeImageActivity" />
+        <activity android:name=".activity.RandomNumberActivity" />
+        <activity android:name=".activity.ConstraintLayoutActivity" />
+        <activity android:name=".activity.TableLayoutActivity" />
+        <activity android:name=".activity.FrameLayoutActivity" />
+        <activity android:name=".activity.RelativeLayoutActivity" />
+        <activity android:name=".activity.LinearLayoutActivity" />
+        <activity android:name=".activity.LayoutActivity" />
         <activity android:name="activity.LayoutActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

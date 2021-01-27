@@ -1,4 +1,4 @@
-package com.example.learnandroid;
+package com.example.learnandroid.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -15,6 +15,8 @@ import android.widget.RadioGroup;
 import android.widget.SeekBar;
 import android.widget.Switch;
 import android.widget.Toast;
+
+import com.example.learnandroid.R;
 
 import java.util.ArrayList;
 

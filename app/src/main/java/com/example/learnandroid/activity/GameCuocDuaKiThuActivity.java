@@ -1,4 +1,4 @@
-package com.example.learnandroid;
+package com.example.learnandroid.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,6 +11,8 @@ import android.widget.ImageButton;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.learnandroid.R;
 
 import java.util.Random;
 

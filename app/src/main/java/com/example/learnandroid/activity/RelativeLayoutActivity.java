@@ -1,8 +1,10 @@
-package com.example.learnandroid;
+package com.example.learnandroid.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.learnandroid.R;
 
 public class RelativeLayoutActivity extends AppCompatActivity {
 
