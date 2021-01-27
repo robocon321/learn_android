@@ -18,6 +18,11 @@ public class CourseAdapter extends BaseAdapter {
     private int resource;
     private ArrayList<Course> list;
 
+    private class ViewHolder{
+        private TextView txtName, txtPrice;
+        private ImageView imgImage;
+    }
+
     public CourseAdapter(Context context, int resource, ArrayList<Course> list) {
         this.context = context;
         this.resource = resource;
@@ -40,19 +45,25 @@ public class CourseAdapter extends BaseAdapter {
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
-        LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View view = inflater.inflate(resource,null);
+    public View getView(int position, View view, ViewGroup parent) {
+        ViewHolder holder ;
+        if(view == null){
+            holder = new ViewHolder();
+            LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            view = inflater.inflate(resource,null);
 
-        TextView txtName = view.findViewById(R.id.txtCourseName);
-        TextView txtPrice = view.findViewById(R.id.txtCoursePrice);
-        ImageView imgImage = view.findViewById(R.id.imgImage);
+            holder.txtName = view.findViewById(R.id.txtCourseName);
+            holder.txtPrice = view.findViewById(R.id.txtCoursePrice);
+            holder.imgImage = view.findViewById(R.id.imgImage);
+
+            view.setTag(holder);
+        }else holder = (ViewHolder) view.getTag();
 
         Course course = list.get(position);
 
-        txtName.setText(course.getName());
-        txtPrice.setText(course.getPrice()+"");
-        imgImage.setImageResource(course.getImage());
+        holder.txtName.setText(course.getName());
+        holder.txtPrice.setText(course.getPrice()+"");
+        holder.imgImage.setImageResource(course.getImage());
 
         return view;
     }
