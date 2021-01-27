@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.LearnAndroid">
-        <activity android:name=".GameCuocDuaKiThuActivity"></activity>
+        <activity android:name=".ListViewBasicActivity"></activity>
+        <activity android:name=".GameCuocDuaKiThuActivity" />
         <activity android:name=".ComponentActivity" />
         <activity android:name=".ChangeImageActivity" />
         <activity android:name=".RandomNumberActivity" />

@@ -6,11 +6,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     Button btnLayout, btnRandomExercise, btnChangeImage, btnComponent, btnGameCuocDua;
-
+    Button btnListViewBasic;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
         btnChangeImage = findViewById(R.id.btnChangeImage_parent);
         btnComponent = findViewById(R.id.btnComponent);
         btnGameCuocDua = findViewById(R.id.btnGameCuocDua);
+        btnListViewBasic = findViewById(R.id.btnListViewBasic);
     }
 
     public void setEvents(){
@@ -65,6 +67,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, GameCuocDuaKiThuActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btnListViewBasic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ListViewBasicActivity.class);
                 startActivity(intent);
             }
         });
