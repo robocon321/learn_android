@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    Button btnLayout, btnRandomExercise, btnChangeImage, btnComponent;
+    Button btnLayout, btnRandomExercise, btnChangeImage, btnComponent, btnGameCuocDua;
 
 
     @Override
@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
         btnRandomExercise = findViewById(R.id.btnRandomExercise);
         btnChangeImage = findViewById(R.id.btnChangeImage_parent);
         btnComponent = findViewById(R.id.btnComponent);
+        btnGameCuocDua = findViewById(R.id.btnGameCuocDua);
     }
 
     public void setEvents(){
@@ -56,6 +57,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, ComponentActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btnGameCuocDua.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, GameCuocDuaKiThuActivity.class);
                 startActivity(intent);
             }
         });

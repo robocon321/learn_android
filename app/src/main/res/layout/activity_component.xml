@@ -64,4 +64,12 @@
         android:secondaryProgress="25"
         android:max="100"
         android:progress="20" />
+    <SeekBar
+        android:id="@+id/seekbarTest"
+        android:thumb="@drawable/node"
+        android:max="100"
+        android:secondaryProgress="20"
+        android:progress="10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 </LinearLayout>

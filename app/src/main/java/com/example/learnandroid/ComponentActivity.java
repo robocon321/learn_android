@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -11,6 +12,7 @@ import android.widget.CompoundButton;
 import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.SeekBar;
 import android.widget.Switch;
 import android.widget.Toast;
 
@@ -23,6 +25,7 @@ public class ComponentActivity extends AppCompatActivity {
     RadioGroup rgSex;
     Button btnChooseOS, btnChooseSex;
     ProgressBar progressTest;
+    SeekBar seekBarTest;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +46,7 @@ public class ComponentActivity extends AppCompatActivity {
         rgSex = findViewById(R.id.rgSex);
 
         progressTest = findViewById(R.id.progressTest);
+        seekBarTest = findViewById(R.id.seekbarTest);
 
         btnChooseOS = findViewById(R.id.btnChooseOs);
 
@@ -91,6 +95,21 @@ public class ComponentActivity extends AppCompatActivity {
 
         countDownTimer.start();
 
+        seekBarTest.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                Log.d("Seekbar", "Change: "+progress);
+            }
 
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+                Log.d("Seekbar", "Start ");
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+                Log.d("Seekbar", "Stop ");
+            }
+        });
     }
 }
