@@ -25,7 +25,6 @@
         <activity android:name=".activity.RelativeLayoutActivity" />
         <activity android:name=".activity.LinearLayoutActivity" />
         <activity android:name=".activity.LayoutActivity" />
-        <activity android:name="activity.LayoutActivity" />
         <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
