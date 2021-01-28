@@ -5,10 +5,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.ContextMenu;
 import android.view.LayoutInflater;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewConfiguration;
 import android.widget.Button;
 import android.widget.PopupMenu;
 import android.widget.Toast;
@@ -18,7 +21,7 @@ import com.example.learnandroid.R;
 public class MainActivity extends AppCompatActivity {
     Button btnLayout, btnRandomExercise, btnChangeImage, btnComponent, btnGameCuocDua;
     Button btnListViewBasic, btnListViewAdvance, btnGridView, btnCustomComponent, btnGlobal;
-    Button btnShowPopupMenu;
+    Button btnShowPopupMenu, btnShowContextMenu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +29,28 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         addControls();
         setEvents();
+        registerForContextMenu(btnShowContextMenu);
+    }
+
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+        getMenuInflater().inflate(R.menu.learn_menu, menu);
+        menu.setHeaderTitle("Please choose");
+        menu.setHeaderIcon(R.drawable.edit);
+        super.onCreateContextMenu(menu, v, menuInfo);
+    }
+
+    @Override
+    public boolean onContextItemSelected(@NonNull MenuItem item) {
+        if(item.getItemId() == R.id.menuAbout)
+            Toast.makeText(this, "About", Toast.LENGTH_SHORT).show();
+        else if(item.getItemId() == R.id.menuContact)
+            Toast.makeText(this, "Contact", Toast.LENGTH_SHORT).show();
+        else if(item.getItemId() == R.id.menuClose)
+            Toast.makeText(this, "Close", Toast.LENGTH_SHORT).show();
+        else
+            Toast.makeText(this, "Child", Toast.LENGTH_SHORT).show();
+        return super.onContextItemSelected(item);
     }
 
     @Override
@@ -60,6 +85,7 @@ public class MainActivity extends AppCompatActivity {
         btnCustomComponent = findViewById(R.id.btnCustomComponent);
         btnGlobal = findViewById(R.id.btnGlobal);
         btnShowPopupMenu = findViewById(R.id.btnShowPopupMenu);
+        btnShowContextMenu = findViewById(R.id.btnShowContextMenu);
     }
 
     public void setEvents(){
