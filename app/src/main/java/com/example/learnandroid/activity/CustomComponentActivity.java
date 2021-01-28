@@ -10,7 +10,7 @@ import android.widget.Button;
 import com.example.learnandroid.R;
 
 public class CustomComponentActivity extends AppCompatActivity {
-    Button btnCustomShapeButton;
+    Button btnCustomShape, btnJoinImage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,14 +21,23 @@ public class CustomComponentActivity extends AppCompatActivity {
     }
 
     public void addControls(){
-        btnCustomShapeButton = findViewById(R.id.btnCustomShape);
+        btnCustomShape = findViewById(R.id.btnCustomShape);
+        btnJoinImage = findViewById(R.id.btnJoinImage);
     }
 
     public void setEvents(){
-        btnCustomShapeButton.setOnClickListener(new View.OnClickListener() {
+        btnCustomShape.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(CustomComponentActivity.this, CustomShapeActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btnJoinImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(CustomComponentActivity.this, JoinImageActivity.class);
                 startActivity(intent);
             }
         });
