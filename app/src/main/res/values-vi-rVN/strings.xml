@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Học Android</string>
+    <string name="form">Mẫu</string>
+    <string name="uname">Tên người dùng</string>
+    <string name="pwd">Mật khẩu</string>
+    <string name="login">Đăng nhập</string>
+    <string name="welcome">Xin chào</string>
+</resources>

@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">LearnAndroid</string>
+    <string name="form">Form</string>
+    <string name="uname">Username</string>
+    <string name="pwd">Password</string>
+    <string name="login">Login</string>
+    <string name="welcome">Welcome</string>
 </resources>

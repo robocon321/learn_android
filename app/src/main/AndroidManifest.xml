@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.LearnAndroid">
-        <activity android:name=".activity.CustomClipActivity"></activity>
+        <activity android:name=".activity.GlobalAppActivity"></activity>
+        <activity android:name=".activity.CustomClipActivity" />
         <activity android:name=".activity.JoinImageActivity" />
         <activity android:name=".activity.CustomShapeActivity" />
         <activity android:name=".activity.CustomComponentActivity" />
