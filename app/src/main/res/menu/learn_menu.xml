@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menuClose"
+        app:showAsAction="always"
+        android:icon="@drawable/close"
+        android:title="Close" />
+    <item
+        android:title="Contact"
+        android:id="@+id/menuContact"/>
+    <item
+        android:id="@+id/menuAbout"
+        android:title="About"/>
+    <item android:title="More">
+        <menu>
+            <item android:title="menuChild_1"/>
+            <item android:title="menuChild_2"/>
+            <item android:title="menuChild_3"/>
+        </menu>
+    </item>
+</menu>
