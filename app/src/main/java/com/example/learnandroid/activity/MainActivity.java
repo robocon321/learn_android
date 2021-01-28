@@ -11,7 +11,7 @@ import com.example.learnandroid.R;
 
 public class MainActivity extends AppCompatActivity {
     Button btnLayout, btnRandomExercise, btnChangeImage, btnComponent, btnGameCuocDua;
-    Button btnListViewBasic, btnListViewAdvance, btnGridView;
+    Button btnListViewBasic, btnListViewAdvance, btnGridView, btnCustomComponent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
         btnListViewBasic = findViewById(R.id.btnListViewBasic);
         btnListViewAdvance = findViewById(R.id.btnListViewAdvance);
         btnGridView = findViewById(R.id.btnGridView);
+        btnCustomComponent = findViewById(R.id.btnCustomComponent);
     }
 
     public void setEvents(){
@@ -93,6 +94,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, GridViewActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btnCustomComponent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, CustomComponentActivity.class);
                 startActivity(intent);
             }
         });
