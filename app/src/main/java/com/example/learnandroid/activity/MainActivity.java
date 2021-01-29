@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,7 +16,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewConfiguration;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.PopupMenu;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.learnandroid.R;
@@ -23,7 +26,7 @@ import com.example.learnandroid.R;
 public class MainActivity extends AppCompatActivity {
     Button btnLayout, btnRandomExercise, btnChangeImage, btnComponent, btnGameCuocDua;
     Button btnListViewBasic, btnListViewAdvance, btnGridView, btnCustomComponent, btnGlobal;
-    Button btnShowPopupMenu, btnShowContextMenu, btnAlertDialog;
+    Button btnShowPopupMenu, btnShowContextMenu, btnAlertDialog, btnCustomDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,6 +92,7 @@ public class MainActivity extends AppCompatActivity {
         btnShowPopupMenu = findViewById(R.id.btnShowPopupMenu);
         btnShowContextMenu = findViewById(R.id.btnShowContextMenu);
         btnAlertDialog = findViewById(R.id.btnAlertDialog);
+        btnCustomDialog = findViewById(R.id.btnCustomDialog);
     }
 
     public void setEvents(){
@@ -215,6 +219,25 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
                 alert.show();
+            }
+        });
+
+        btnCustomDialog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Dialog dialog = new Dialog(MainActivity.this);
+                dialog.setContentView(R.layout.activity_global_app);
+                EditText editUname = dialog.findViewById(R.id.editGlobalUname);
+                EditText editPwd = dialog.findViewById(R.id.editGlobalPwd);
+                Button btnSubmit = dialog.findViewById(R.id.btnGlobal);
+                btnSubmit.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Toast.makeText(MainActivity.this, editUname.getText()+"\t"+editPwd.getText(), Toast.LENGTH_SHORT).show();
+                        dialog.cancel();
+                    }
+                });
+                dialog.show();
             }
         });
     }

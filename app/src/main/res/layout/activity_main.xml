@@ -72,6 +72,11 @@
             android:text="Alert dialog"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
+        <Button
+            android:id="@+id/btnCustomDialog"
+            android:text="Custom dialog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
 </LinearLayout>
 </ScrollView>
 
