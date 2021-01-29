@@ -6,7 +6,12 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
     <EditText
         android:id="@+id/editDatePicker"
-        android:hint="Click here"
+        android:hint="Click here to choose date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <EditText
+        android:id="@+id/editTimePicker"
+        android:hint="Click here to choose time"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 </LinearLayout>
