@@ -1,8 +1,10 @@
 package com.example.learnandroid.activity;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.ContextMenu;
@@ -21,7 +23,7 @@ import com.example.learnandroid.R;
 public class MainActivity extends AppCompatActivity {
     Button btnLayout, btnRandomExercise, btnChangeImage, btnComponent, btnGameCuocDua;
     Button btnListViewBasic, btnListViewAdvance, btnGridView, btnCustomComponent, btnGlobal;
-    Button btnShowPopupMenu, btnShowContextMenu;
+    Button btnShowPopupMenu, btnShowContextMenu, btnAlertDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -86,6 +88,7 @@ public class MainActivity extends AppCompatActivity {
         btnGlobal = findViewById(R.id.btnGlobal);
         btnShowPopupMenu = findViewById(R.id.btnShowPopupMenu);
         btnShowContextMenu = findViewById(R.id.btnShowContextMenu);
+        btnAlertDialog = findViewById(R.id.btnAlertDialog);
     }
 
     public void setEvents(){
@@ -189,6 +192,29 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
                 popupMenu.show();
+            }
+        });
+
+        btnAlertDialog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder alert = new AlertDialog.Builder(MainActivity.this);
+                alert.setIcon(R.drawable.android);
+                alert.setTitle("This is title");
+                alert.setMessage("This is message");
+                alert.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Toast.makeText(MainActivity.this, "Yes", Toast.LENGTH_SHORT).show();
+                    }
+                });
+                alert.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Toast.makeText(MainActivity.this, "No", Toast.LENGTH_SHORT).show();
+                    }
+                });
+                alert.show();
             }
         });
     }
