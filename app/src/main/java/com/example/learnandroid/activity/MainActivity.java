@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
     Button btnLayout, btnRandomExercise, btnChangeImage, btnComponent, btnGameCuocDua;
     Button btnListViewBasic, btnListViewAdvance, btnGridView, btnCustomComponent, btnGlobal;
     Button btnShowPopupMenu, btnShowContextMenu, btnAlertDialog, btnCustomDialog;
+    Button btnDateDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -93,6 +94,7 @@ public class MainActivity extends AppCompatActivity {
         btnShowContextMenu = findViewById(R.id.btnShowContextMenu);
         btnAlertDialog = findViewById(R.id.btnAlertDialog);
         btnCustomDialog = findViewById(R.id.btnCustomDialog);
+        btnDateDialog = findViewById(R.id.btnDateDialog);
     }
 
     public void setEvents(){
@@ -238,6 +240,14 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
                 dialog.show();
+            }
+        });
+
+        btnDateDialog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, DatePickerDialogActivity.class);
+                startActivity(intent);
             }
         });
     }
