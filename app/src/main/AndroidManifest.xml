@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.learnandroid">
 
-    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
         android:allowBackup="true"
@@ -11,7 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.LearnAndroid">
-        <activity android:name=".activity.IntentBundleActivity"></activity>
+        <activity android:name=".activity.ReceiveDataIntentActivity"></activity>
+        <activity android:name=".activity.SendIntentDataResultActivity" />
+        <activity android:name=".activity.IntentBundleActivity" />
         <activity android:name=".activity.DateAndTimePickerDialogActivity" />
         <activity android:name=".activity.GlobalAppActivity" />
         <activity android:name=".activity.CustomClipActivity" />

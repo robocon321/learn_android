@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
     Button btnLayout, btnRandomExercise, btnChangeImage, btnComponent, btnGameCuocDua;
     Button btnListViewBasic, btnListViewAdvance, btnGridView, btnCustomComponent, btnGlobal;
     Button btnShowPopupMenu, btnShowContextMenu, btnAlertDialog, btnCustomDialog;
-    Button btnDateDialog, btnIntent, btnSendMessage, btnCall;
+    Button btnDateDialog, btnIntent, btnSendMessage, btnCall, btnIntentData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -96,6 +96,7 @@ public class MainActivity extends AppCompatActivity {
         btnIntent = findViewById(R.id.btnIntent);
         btnSendMessage = findViewById(R.id.btnSendMessage);
         btnCall = findViewById(R.id.btnCall);
+        btnIntentData = findViewById(R.id.btnIntentData);
     }
 
     public void setEvents(){
@@ -287,6 +288,14 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent();
                 intent.setAction(Intent.ACTION_CALL);
                 intent.setData(Uri.parse("tel:0354512411"));
+                startActivity(intent);
+            }
+        });
+
+        btnIntentData.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, SendIntentDataResultActivity.class);
                 startActivity(intent);
             }
         });
