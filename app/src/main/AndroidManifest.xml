@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.LearnAndroid">
-        <activity android:name=".activity.ReceiveDataIntentActivity"></activity>
+        <activity android:name=".activity.UseCameraImageActivity"></activity>
+        <activity android:name=".activity.ReceiveDataIntentActivity" />
         <activity android:name=".activity.SendIntentDataResultActivity" />
         <activity android:name=".activity.IntentBundleActivity" />
         <activity android:name=".activity.DateAndTimePickerDialogActivity" />

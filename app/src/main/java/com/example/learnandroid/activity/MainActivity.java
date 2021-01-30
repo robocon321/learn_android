@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
     Button btnLayout, btnRandomExercise, btnChangeImage, btnComponent, btnGameCuocDua;
     Button btnListViewBasic, btnListViewAdvance, btnGridView, btnCustomComponent, btnGlobal;
     Button btnShowPopupMenu, btnShowContextMenu, btnAlertDialog, btnCustomDialog;
-    Button btnDateDialog, btnIntent, btnSendMessage, btnCall, btnIntentData;
+    Button btnDateDialog, btnIntent, btnSendMessage, btnCall, btnIntentData, btnCamera;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -97,6 +97,7 @@ public class MainActivity extends AppCompatActivity {
         btnSendMessage = findViewById(R.id.btnSendMessage);
         btnCall = findViewById(R.id.btnCall);
         btnIntentData = findViewById(R.id.btnIntentData);
+        btnCamera = findViewById(R.id.btnCamera);
     }
 
     public void setEvents(){
@@ -296,6 +297,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, SendIntentDataResultActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btnCamera.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, UseCameraImageActivity.class);
                 startActivity(intent);
             }
         });
