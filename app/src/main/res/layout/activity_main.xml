@@ -82,6 +82,11 @@
             android:text="Date picker dialog"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
+        <Button
+            android:id="@+id/btnIntent"
+            android:text="Bundle and Intent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
 </LinearLayout>
 </ScrollView>
 

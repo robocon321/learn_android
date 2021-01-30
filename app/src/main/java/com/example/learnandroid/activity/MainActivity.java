@@ -18,12 +18,13 @@ import android.widget.PopupMenu;
 import android.widget.Toast;
 
 import com.example.learnandroid.R;
+import com.example.learnandroid.utils.Course;
 
 public class MainActivity extends AppCompatActivity {
     Button btnLayout, btnRandomExercise, btnChangeImage, btnComponent, btnGameCuocDua;
     Button btnListViewBasic, btnListViewAdvance, btnGridView, btnCustomComponent, btnGlobal;
     Button btnShowPopupMenu, btnShowContextMenu, btnAlertDialog, btnCustomDialog;
-    Button btnDateDialog;
+    Button btnDateDialog, btnIntent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,6 +92,7 @@ public class MainActivity extends AppCompatActivity {
         btnAlertDialog = findViewById(R.id.btnAlertDialog);
         btnCustomDialog = findViewById(R.id.btnCustomDialog);
         btnDateDialog = findViewById(R.id.btnDateDialog);
+        btnIntent = findViewById(R.id.btnIntent);
     }
 
     public void setEvents(){
@@ -243,6 +245,24 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, DateAndTimePickerDialogActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btnIntent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, IntentBundleActivity.class);
+                intent.putExtra("int", 3);
+                intent.putExtra("string", "Hello world");
+                intent.putExtra("arr", new String[]{"ha","hi"});
+                intent.putExtra("obj", new Course("course",33,33));
+
+                Bundle bundle = new Bundle();
+                bundle.putInt("bundle_int",3);
+                bundle.putSerializable("bundle_obj", new Course("course",44,22));
+
+                intent.putExtra("bundle", bundle);
                 startActivity(intent);
             }
         });

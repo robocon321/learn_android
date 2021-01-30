@@ -1,6 +1,8 @@
 package com.example.learnandroid.utils;
 
-public class Course {
+import java.io.Serializable;
+
+public class Course implements Serializable {
     private String name;
     private int price;
     private int image;
