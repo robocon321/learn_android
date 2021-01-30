@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     Button btnListViewBasic, btnListViewAdvance, btnGridView, btnCustomComponent, btnGlobal;
     Button btnShowPopupMenu, btnShowContextMenu, btnAlertDialog, btnCustomDialog;
     Button btnDateDialog, btnIntent, btnSendMessage, btnCall, btnIntentData, btnCamera;
+    Button btnGameChooseImage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -101,6 +102,7 @@ public class MainActivity extends AppCompatActivity {
         btnCall = findViewById(R.id.btnCall);
         btnIntentData = findViewById(R.id.btnIntentData);
         btnCamera = findViewById(R.id.btnCamera);
+        btnGameChooseImage = findViewById(R.id.btnGameChooseImage);
     }
 
     public void setEvents(){
@@ -305,6 +307,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, UseCameraImageActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btnGameChooseImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, GameChooseImageActivity.class);
                 startActivity(intent);
             }
         });
