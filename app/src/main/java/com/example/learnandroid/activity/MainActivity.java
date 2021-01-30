@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.ContextMenu;
 import android.view.Menu;
@@ -24,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
     Button btnLayout, btnRandomExercise, btnChangeImage, btnComponent, btnGameCuocDua;
     Button btnListViewBasic, btnListViewAdvance, btnGridView, btnCustomComponent, btnGlobal;
     Button btnShowPopupMenu, btnShowContextMenu, btnAlertDialog, btnCustomDialog;
-    Button btnDateDialog, btnIntent;
+    Button btnDateDialog, btnIntent, btnSendMessage, btnCall;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -93,6 +94,8 @@ public class MainActivity extends AppCompatActivity {
         btnCustomDialog = findViewById(R.id.btnCustomDialog);
         btnDateDialog = findViewById(R.id.btnDateDialog);
         btnIntent = findViewById(R.id.btnIntent);
+        btnSendMessage = findViewById(R.id.btnSendMessage);
+        btnCall = findViewById(R.id.btnCall);
     }
 
     public void setEvents(){
@@ -263,6 +266,27 @@ public class MainActivity extends AppCompatActivity {
                 bundle.putSerializable("bundle_obj", new Course("course",44,22));
 
                 intent.putExtra("bundle", bundle);
+                startActivity(intent);
+            }
+        });
+
+        btnSendMessage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setAction(Intent.ACTION_SENDTO);
+                intent.putExtra("sms_body","Hello world");
+                intent.setData(Uri.parse("sms:0354512411"));
+                startActivity(intent);
+            }
+        });
+
+        btnCall.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setAction(Intent.ACTION_CALL);
+                intent.setData(Uri.parse("tel:0354512411"));
                 startActivity(intent);
             }
         });

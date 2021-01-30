@@ -87,6 +87,16 @@
             android:text="Bundle and Intent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
+        <Button
+            android:id="@+id/btnSendMessage"
+            android:text="Send message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <Button
+            android:id="@+id/btnCall"
+            android:text="Call a number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
 </LinearLayout>
 </ScrollView>
 
