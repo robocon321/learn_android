@@ -5,4 +5,19 @@
     <string name="pwd">Password</string>
     <string name="login">Login</string>
     <string name="welcome">Welcome</string>
+    <string-array name="arr">
+        <item>hinh_1</item>
+        <item>hinh_2</item>
+        <item>hinh_3</item>
+        <item>hinh_4</item>
+        <item>hinh_5</item>
+        <item>hinh_6</item>
+        <item>hinh_7</item>
+        <item>hinh_8</item>
+        <item>hinh_9</item>
+        <item>hinh_10</item>
+        <item>hinh_11</item>
+        <item>hinh_12</item>
+        <item>hinh_13</item>
+    </string-array>
 </resources>
